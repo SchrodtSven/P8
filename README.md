@@ -1,2 +1,9 @@
 # P8
-Playground for testing new features of PHP8.0.x
+Playground for testing new features of PHP8.0.x - just testing new features 
+- nothing to see here   
+   )
+  ) \
+ / ) (
+ \(_)/         
+
+ Glück auf! 
