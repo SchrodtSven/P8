@@ -26,7 +26,8 @@ Just another playground for testing new features of PHP8.0.x
      -see: <code>\SchrodtSven\P8\Internal\StringClass wrappers</code> (<code>::ends(), ::begins(), ::contains()</code>)
 
 -  <code>get_debug_type(mixed $value): string</code> - has been added, which returns a type useful for error messages. Unlike <code>gettype()</code>, it uses canonical type names, returns class names for objects, and indicates the resource type for resources.
-    - <code>\SchrodtSven\P8\Internal\StringClass</code>
+    public static function forceToBeStringClass(int|float|bool|string|null|array|\Stringable $content): self
+    - see: <code>\SchrodtSven\P8\Internal\StringClass::forceToBeStringClass()</code> and test <code>test/StringClassTest</code>
 
 ### Null safe operator
  - see: <code>test/New/MixedTest.php</code>
@@ -93,6 +94,7 @@ Just another playground for testing new features of PHP8.0.x
 - It is now possible to write <code>catch (Exception) </code> to catch an exception without storing it in a variable.
 
 - Support for mixed type has been added.
+    - see: <code>\SchrodtSven\P8\Internal\StringClass::forceToBeStringClass()</code> and test <code>test/StringClassTest</code>
 
 ## Appendix
 
