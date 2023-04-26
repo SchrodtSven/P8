@@ -36,7 +36,7 @@ Just another playground for testing new features of PHP8.0.x
 
 
 ### Attributes
-- see: <code>\SchrodtSven\P8\New\AttributeUser/code> and test (<code>test\New\AttributeUserTest</code>)
+- see: <code>\SchrodtSven\P8\New\AttributeUser</code> and test (<code>test\New\AttributeUserTest</code>)
 
 
 ### Constructor promotion
@@ -54,29 +54,27 @@ Just another playground for testing new features of PHP8.0.x
 
 ### New return value static
 
-<code>static</code> (as in “late static binding”) can now be used as a return type
+- <code>static</code> (as in “late static binding”) can now be used as a return type
 
 ### New native class \PhpToken
 
 -  Adds a new OOP interface being more memory efficient and faster. 
-
-  - see: <code><test/TokenTest.php/code>
+  - see: <code><test/TokenTest.php/</code>
 
 
 ### Nota bene 
 
- - It is now possible to fetch the class name of an object using <code>$object::class</code>. The result is the same as <code>get_class($object)</code>.
+- It is now possible to fetch the class name of an object using <code>$object::class</code>. The result is the same as <code>get_class($object)</code>.
 
- - <code>new</code> and <code>instanceof</code> can now be used with arbitrary expressions, using <code>new (expression)(...$args)</code> and <code>$obj instanceof(expression)</code>.
+- <code>new</code> and <code>instanceof</code> can now be used with arbitrary expressions, using <code>new (expression)(...$args)</code> and <code>$obj instanceof(expression)</code>.
 
- - Some consistency fixes to variable syntax have been applied, for example writing <code>Foo::BAR::$baz</code> is now allowed.
-
- - Added <code>Stringable</code> interface, which is automatically implemented if a class defines a <code>__toString()</code> method.
+- Some consistency fixes to variable syntax have been applied, for example writing <code>Foo::BAR::$baz</code> is now allowed.
+- Added <code>Stringable</code> interface, which is automatically implemented if a class defines a <code>__toString()</code> method.
     - see: <code>\SchrodtSven\P8\Internal\StringClass</code> & test
 
- - Traits can now define abstract private methods. Such methods must be implemented by the class using the trait.
+- Traits can now define abstract private methods. Such methods must be implemented by the class using the trait.
 
- - throw can now be used as an expression. That allows usages like:<code><pre>
+ - <code>throw</code>can now be used as an expression. That allows usages like:<code><pre>
     $fn = fn() => throw new Exception('Exception in arrow function');
     $user = $session->user ?? throw new Exception('Must have user');
     </pre></code>
@@ -115,14 +113,13 @@ Just another playground for testing new features of PHP8.0.x
 
 ## Outlook / Todos
  
-  - Adding documentation 
-  - Adding comments 
-  - Completing checks
-  - Adding unit tests for PHPUnit 
-  - Adding support for testing via <a href="https://github.com/SchrodtSven/P8Unitcheck">P8UnitCheck</a>
-  
-  - Ensuring further PSR* compatibility
-  - Ensuring it to be shippable via <code>composer</code>
+- Adding documentation 
+- Adding comments 
+- Completing checks
+- Adding unit tests for PHPUnit 
+- Adding support for testing via <a href="https://github.com/SchrodtSven/P8Unitcheck">P8UnitCheck</a>
+- Ensuring further PSR* compatibility
+- Ensuring it to be shippable via <code>composer</code>
 
 
  Glück auf! 
