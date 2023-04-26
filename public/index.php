@@ -12,3 +12,4 @@ var_dump(
     $pers?->firstName
 );
 
+echo (new StringClass('late static binding'))->quoteTypographic();

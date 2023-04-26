@@ -78,4 +78,9 @@ class StringClass implements \Stringable
         $this->content = trim($this->content);
         return $this;
     }
+
+    public function quoteTypographic(string $open = '“', string $close = '”'): self
+    {
+        return $this->prepend($open)->append($close);
+    }
 }
