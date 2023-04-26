@@ -96,6 +96,8 @@ Just another playground for testing new features of PHP8.0.x
 - Support for mixed type has been added.
     - see: <code>\SchrodtSven\P8\Internal\StringClass::forceToBeStringClass()</code> and test <code>test/StringClassTest</code>
 
+    
+
 ## Appendix
 
 ### Development environment 
