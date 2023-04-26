@@ -29,6 +29,7 @@ Just another playground for testing new features of PHP8.0.x
     - <code>\SchrodtSven\P8\Internal\StringClass</code>
 
 ### Null safe operator
+ - see: <code>test/New/MixedTest.php</code>
 
 ### Match expression
 - see: <code>\SchrodtSven\P8\New\MatchExample</code> and test (<code>test\Internal\MatchExampleTest</code>)
@@ -61,13 +62,8 @@ Just another playground for testing new features of PHP8.0.x
 
   - see: <code><test/TokenTest.php/code>
 
-### HashContext is now serializable
-
-
 
 ### Nota bene 
-
-
 
  - It is now possible to fetch the class name of an object using <code>$object::class</code>. The result is the same as <code>get_class($object)</code>.
 
