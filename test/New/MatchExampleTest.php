@@ -46,9 +46,15 @@ class MatchExampleTest extends TestCase
         return [
                 [MatchExample::APPLE, ['MacIntosh', 'II GS', 'IPod']],
                 [MatchExample::NINTENDO, ['NES', 'SNES', 'Gameboy', 'wii']],
-                [MatchExample::ATARI, ['600XL', '1040 STE', 'Falcon', 'Jaguar', 'Protfolio', 'ATW']]
+                [MatchExample::ATARI, ['600XL', '1040 STE', 'Falcon', 'Jaguar', 'Protfolio', 'ATW']],
+                ['FOO', ['n/a']]
         ];
               
+    }
+
+    public function vendorProductMatcher(): array
+    {
+
     }
 
 }
