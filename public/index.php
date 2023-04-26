@@ -5,11 +5,3 @@ use SchrodtSven\P8\Internal\ListClass;
 use SchrodtSven\P8\Internal\StringClass;
 use SchrodtSven\P8\Internal\Repository;
 
-$repo =  new Repository();
-
-$pers = $repo->getById(33);
-var_dump(
-    $pers?->firstName
-);
-
-echo (new StringClass('late static binding'))->quoteTypographic();

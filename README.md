@@ -1,6 +1,6 @@
 # P8
 Just another playground for testing new features of PHP8.0.x 
-- nothing special to discover see here   
+- nothing special to discover here   
 
 <pre>
 
@@ -23,8 +23,10 @@ Just another playground for testing new features of PHP8.0.x
 ### New Functions
 
 - <code>str_contains()</code>, <code>str_starts_with()</code> and <code>str_ends_with()</code> 
-     - within: SchrodtSven\P8\Internal\StringClass wrappers (<code>::ends(), ::begins(), ::contains()</code>)
+     - tested in: <code>\SchrodtSven\P8\Internal\StringClass wrappers</code> (<code>::ends(), ::begins(), ::contains()</code>)
 
+-  <code>get_debug_type(mixed $value): string</code> - has been added, which returns a type useful for error messages. Unlike <code>gettype()</code>, it uses canonical type names, returns class names for objects, and indicates the resource type for resources.
+    - <code>\SchrodtSven\P8\Internal\StringClass</code>
 
 ### Null safe operator
 
@@ -36,17 +38,31 @@ Just another playground for testing new features of PHP8.0.x
 
 ### Named arguments
 
+### Union types 
+
+ - see: <code>\SchrodtSven\P8\Internal\StringClass</code> and test (<code>test\Internal\StringClassTest</code>)
+
 ### New return value static
 
 <code>static</code> (as in “late static binding”) can now be used as a return type
+
+### New native class \PhpToken
+
+-  Adds a new OOP interface being more memory efficient and faster. 
+
+  - see: <code><test/TokenTest.php/code>
+
+### HashContext is now serializable
+
+
 
 ### Nota bene 
 
 
 
- - It is now possible to fetch the class name of an object using $object::class. The result is the same as get_class($object).
+ - It is now possible to fetch the class name of an object using <code>$object::class</code>. The result is the same as <code>get_class($object)</code>.
 
- - new and instanceof can now be used with arbitrary expressions, using new (expression)(...$args) and $obj instanceof(expression).
+ - new and instanceof can now be used with arbitrary expressions, using <code>new (expression)(...$args)</code> and <code>$obj instanceof(expression)</code>.
 
  - Some consistency fixes to variable syntax have been applied, for example writing Foo::BAR::$baz is now allowed.
 

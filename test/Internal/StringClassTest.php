@@ -44,6 +44,42 @@ class StringClassTest extends TestCase
     }
 
 
+    /**
+     * 
+     * @dataProvider typeSupplier
+     */
+    public function testUnionTypeDeclaration(mixed $expression, string $status): void
+    {
+        if($status === 'ok') {
+            $foo = StringClass::forceToBeStringClass($expression);
+            $this->assertInstanceOf(StringClass::class, $foo);
+            $this->assertTrue(is_string((string) $foo));
+        } else {
+            $this->expectError('TypeError');
+            $foo = StringClass::forceToBeStringClass($expression);
+        }
+        
+        
+    }
+
+    public function typeSupplier(): array
+    {
+        return [
+            [true, 'ok'], 
+            [false, 'ok'], 
+            [null, 'ok'],
+            ['example String', 'ok'],
+            [new StringClass('Bar'), 'ok'],
+            [ 1234, 'ok'], 
+            [3.145, 'ok'],
+            [[1,2,23,6], 'ok'],
+            [new \stdClass(), 'notOk'],
+            [new \DateTime(), 'notOk'],
+            [new PhpToken(\T_ECHO, 'echo'), 'ok'],
+        ];
+    }
+
+
     public function productListSupplier(): array
     {
         return [

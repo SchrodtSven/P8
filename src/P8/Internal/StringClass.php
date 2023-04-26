@@ -20,6 +20,50 @@ class StringClass implements \Stringable
 
     }
 
+    public static function createFromFile(string $filename): self
+    {
+        return new self(\file_get_contents($filename));
+    }
+
+    public static function createFromStringable(\Stringable $stringable): self
+    {
+        return new self((string) $stringable);
+    }
+
+    // of course: we MUST know possible types, but we are using this for testing <code>mixed type declaration</code>
+    // that said, we call it *Unknown - :P
+    public static function createFromUnknown(string | \Stringable $content): self
+    {
+        return (\is_string($content)) 
+            ? new self($content)
+            : new self((string) $content);
+
+            //@FIXME -> adding possible casts for int|bool|float
+    }
+
+    /**
+     * We are just testing here, but this could be helpfull, if you MUST get a string context of given
+     * $variable | data | data structure | foo 
+     * e.g: debugging, logging, ...$bar 
+     * 
+     */
+    public static function forceToBeStringClass(int|float|bool|string|null|array|\Stringable $content): self
+    {
+        if($content instanceof \Stringable) {
+            $content = (string) $content;
+        }
+
+        return new self(
+            match(get_debug_type($content)) {
+                'int', 'float' => (string) $content,
+                'bool' => ($content) ? 'true' : 'false',
+                'array' => implode(', ', $content),
+                'null' => 'null',
+                default => $content
+            } 
+        );
+    }
+
     public function prepend(string $begin): self
     {
         $this->content = $begin . $this->content;
