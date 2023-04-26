@@ -23,7 +23,7 @@ Just another playground for testing new features of PHP8.0.x
 ### New Functions
 
 - <code>str_contains()</code>, <code>str_starts_with()</code> and <code>str_ends_with()</code> 
-     - tested in: <code>\SchrodtSven\P8\Internal\StringClass wrappers</code> (<code>::ends(), ::begins(), ::contains()</code>)
+     -see: <code>\SchrodtSven\P8\Internal\StringClass wrappers</code> (<code>::ends(), ::begins(), ::contains()</code>)
 
 -  <code>get_debug_type(mixed $value): string</code> - has been added, which returns a type useful for error messages. Unlike <code>gettype()</code>, it uses canonical type names, returns class names for objects, and indicates the resource type for resources.
     - <code>\SchrodtSven\P8\Internal\StringClass</code>
@@ -31,12 +31,21 @@ Just another playground for testing new features of PHP8.0.x
 ### Null safe operator
 
 ### Match expression
+- see: <code>\SchrodtSven\P8\New\MatchExample</code> and test (<code>test\Internal\MatchExampleTest</code>)
+
 
 ### Attributes
+- see: <code>\SchrodtSven\P8\New\AttributeUser/code> and test (<code>test\New\AttributeUserTest</code>)
+
 
 ### Constructor promotion
 
+- see: <code>\SchrodtSven\P8\New\ConstructorPromotion</code> and test (<code>test\Internal\ConstructorPromotionTest</code>)
+
+
 ### Named arguments
+
+- see: <code>\SchrodtSven\P8\New\NamedArguments</code> and test (<code>test\Internal\NamedArgumentsTest</code>)
 
 ### Union types 
 
@@ -62,11 +71,11 @@ Just another playground for testing new features of PHP8.0.x
 
  - It is now possible to fetch the class name of an object using <code>$object::class</code>. The result is the same as <code>get_class($object)</code>.
 
- - new and instanceof can now be used with arbitrary expressions, using <code>new (expression)(...$args)</code> and <code>$obj instanceof(expression)</code>.
+ - <code>new</code> and <code>instanceof</code> can now be used with arbitrary expressions, using <code>new (expression)(...$args)</code> and <code>$obj instanceof(expression)</code>.
 
- - Some consistency fixes to variable syntax have been applied, for example writing Foo::BAR::$baz is now allowed.
+ - Some consistency fixes to variable syntax have been applied, for example writing <code>Foo::BAR::$baz</code> is now allowed.
 
- - Added Stringable interface, which is automatically implemented if a class defines a <code>__toString()</code> method.
+ - Added <code>Stringable</code> interface, which is automatically implemented if a class defines a <code>__toString()</code> method.
     - see: <code>\SchrodtSven\P8\Internal\StringClass</code> & test
 
  - Traits can now define abstract private methods. Such methods must be implemented by the class using the trait.
