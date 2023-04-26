@@ -72,4 +72,10 @@ class StringClass implements \Stringable
     {
         return \mb_strlen($this->content);
     }
+
+    public function trim(): self
+    {
+        $this->content = trim($this->content);
+        return $this;
+    }
 }

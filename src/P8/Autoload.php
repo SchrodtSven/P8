@@ -5,14 +5,14 @@ declare(strict_types=1);
  * Auto loading for P8
  * 
  * @author Sven Schrodt<sven@schrodt.club>
- * @link https://github.com/SchrodtSven/P8UnitCheck
- * @package P8UnitCheck
+ * @link https://github.com/SchrodtSven/P8
+ * @package P8
  * @version 0.1
  * @since 2023-04-23
  */
 
 
-namespace P8UnitCheck;
+namespace P8;
 
 class Autoload
 {

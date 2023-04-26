@@ -23,6 +23,16 @@ class ListClass implements \ArrayAccess, \Countable, \Iterator
 
     }
 
+    public static function createFromFile(string $filename): self
+    {
+        if(!\file_exists($filename)) {
+            //throw new FileError()
+            //@FIXME -> write SchrodtSven\P8\Internal\FileError
+        }
+
+        return new self(file($filename));
+    }
+
     public function count(): int 
     {
         return count($this->content);
@@ -94,7 +104,10 @@ class ListClass implements \ArrayAccess, \Countable, \Iterator
 
             return $tmp;
             }
+    }
 
-            
+    public function filterBy(string $subject): ListFilter
+    {
+        return new ListFilter($this, $subject);
     }
 }
